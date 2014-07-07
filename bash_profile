@@ -14,7 +14,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
 
 ## Python
 # Homebrew's python distro
-export PATH=/usr/local/share/python:$PATH
+# export PATH=/usr/local/share/python:$PATH
 
 ## Virtualenv Settings
 # virtualenv should use Distribute instead of legacy setuptools
@@ -22,7 +22,7 @@ export VIRTUALENV_DISTRIBUTE=true
 # Centralized location for new virtual environments
 export PIP_VIRTUALENV_BASE=$HOME/Virtualenvs
 # pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=false
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
@@ -47,9 +47,9 @@ source /usr/local/lib/node_modules/npm/lib/utils/completion.sh
 
 ## RVM Settings
 # Add RVM to PATH for scripting
-export PATH=$HOME/.rvm/bin:$PATH
+#export PATH=$HOME/.rvm/bin:$PATH
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 ## Environment customizations
 # Add Sublime Text 2 as default editor
@@ -91,4 +91,8 @@ export PS1='\[\033[1;35m\]\h \[\033[0;30m\]\d \[\033[0;30m\]\A \[\033[1;30m\]\W 
 
 ## Bashrc
 # Load .bashrc if it exists
-test -f ~/.bashrc && source ~/.bashrc
+test -f ~/.bashrc && source ~/.bashrc 
+
+# Chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
