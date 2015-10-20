@@ -3,8 +3,6 @@
 export ARCHFLAGS="-arch x86_64"
 # beginning of PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
-# If something doesn't work, return to messy old path
-# export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/local/node/bin:/usr/local/bin:
 
 ## Homebrew
 # Set brew bash completion
@@ -15,6 +13,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
 ## Python
 # Homebrew's python distro
 export PATH=/usr/local/share/python:$PATH
+# Pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 ## Virtualenv Settings
 # virtualenv should use Distribute instead of legacy setuptools
@@ -33,7 +34,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
-## for mysql server 
+## for mysql server
 
 ## Node/NPM
 # Node
@@ -45,15 +46,12 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # Add bash completion for npm
 source /usr/local/lib/node_modules/npm/lib/utils/completion.sh
 
-## RVM Settings
-# Add RVM to PATH for scripting
-export PATH=$HOME/.rvm/bin:$PATH
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+## RBENV
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## Environment customizations
 # Add Sublime Text 2 as default editor
-export EDITOR="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" 
+export EDITOR="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
 
 ## Add support for UTF-8
 export LANG="en_US.UTF-8"
@@ -92,3 +90,6 @@ export PS1='\[\033[1;35m\]\h \[\033[0;30m\]\d \[\033[0;30m\]\A \[\033[1;30m\]\W 
 ## Bashrc
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
