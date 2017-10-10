@@ -45,6 +45,9 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export PATH=/usr/local/share/npm/bin:$PATH
 # Add bash completion for npm
 source /usr/local/lib/node_modules/npm/lib/utils/completion.sh
+# NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 ## RBENV
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
