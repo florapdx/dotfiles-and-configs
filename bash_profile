@@ -50,8 +50,10 @@ source /usr/local/lib/node_modules/npm/lib/utils/completion.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## Environment customizations
-# Add Sublime Text 2 as default editor
-export EDITOR="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
+# Add Sublime Text 2/3 as default editor
+# ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+# export EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+export EDITOR="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 ## Add support for UTF-8
 export LANG="en_US.UTF-8"
